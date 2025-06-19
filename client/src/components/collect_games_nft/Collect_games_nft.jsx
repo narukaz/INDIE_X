@@ -1,5 +1,5 @@
 import React from "react";
-import Game_NFT_Collect_Explorer from "./Game_NFT_Collect_Explorer";
+import Game_NFT_Collect_Explorer from "./Game_NFT_Collect_Explorer.jsx";
 
 function Collect_games_nft() {
   return (
