@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Game_NFT_COLLECT_CARD from "./Game_NFT_COLLECT_CARD";
+import Game_NFT_COLLECT_CARD from "./Game_NFT_COLLECT_CARD.jsx";
 
 function Game_NFT_Collect_Explorer() {
   return (
