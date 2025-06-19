@@ -1,16 +1,15 @@
 import Footer from "./components/Footer/Footer";
 import Navigation from "./components/Header/Navigation";
 import { Route, Routes } from "react-router-dom";
-import Home_Screen from "./components/Home_Screen";
-import Collect_games_nft from "./components/collect_games_nft/collect_games_nft";
-import COLLECT_SKIN_NFT from "./components/collect_skin_nft/COLLECT_SKIN_NFT";
-import Rent_and_Lend from "./components/Rent_and_lend/Rent_and_Lend";
-import NFT_explorer from "./components/Rent_and_lend/NFT_explorer";
-import Game_screen from "./components/game_screen/Game_screen";
-import Game_NFT_Collect_Explorer from "./components/collect_games_nft/Game_NFT_Collect_Explorer";
-import NFT_SKIN_ORIGIN_SCREEN from "./components/NFT_Skin_screen/NFT_SKIN_ORIGIN_SCREEN";
-import Auction_screen from "./components/auction/Auction_screen";
-import Creator_page from "./components/Creator/Creator_page";
+import Home_Screen from "./components/Home_Screen.jsx";
+import Collect_games_nft from "./components/collect_games_nft/collect_games_nft.jsx";
+import COLLECT_SKIN_NFT from "./components/collect_skin_nft/COLLECT_SKIN_NFT.jsx";
+import Rent_and_Lend from "./components/Rent_and_lend/Rent_and_Lend.jsx";
+import NFT_explorer from "./components/Rent_and_lend/NFT_explorer.jsx";
+import Game_screen from "./components/game_screen/Game_screen.jsx";
+import Game_NFT_Collect_Explorer from "./components/collect_games_nft/Game_NFT_Collect_Explorer.jsx";
+import NFT_SKIN_ORIGIN_SCREEN from "./components/NFT_Skin_screen/NFT_SKIN_ORIGIN_SCREEN.jsx";
+import Creator_page from "./components/Creator/Creator_page.jsx";
 
 // home
 //collect games -> popular card banner , below that an explorer, when click it will open a game page -> game page will have a explorer only for game related nft's
