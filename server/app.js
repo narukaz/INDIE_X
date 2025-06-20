@@ -1,8 +1,9 @@
 import express from "express";
-import nftRouter from "./routes/nft.js";
+import imageRouter from "./routes/image.js";
+import metadataRouter from "./routes/metadata.js";
 
 const app = express();
 app.use(express.json());
-app.use("/nft", nftRouter);
-
+app.use("/image", imageRouter);
+app.use("/metadata", metadataRouter);
 export default app;
