@@ -1,7 +1,8 @@
-import pinataSDK from "pinata";
+import dotenv from "dotenv";
+dotenv.config();
+import { PinataSDK } from "pinata";
 
-const client = pinataSDK(
-  process.env.PINATA_API_KEY,
-  process.env.PINATA_API_SECRET
-);
-export default pinata;
+export const client = new PinataSDK({
+  pinataJwt: process.env.PINATA_JWT,
+  pinataGateway: process.env.PINATA_GATEWAY,
+});

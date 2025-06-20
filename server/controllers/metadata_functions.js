@@ -1,8 +1,8 @@
-import * as pinService from "../services/pinService.js";
+import { pinJSON } from "../services/pinService.js";
 
 export async function pin(req, res) {
   try {
-    const cid = await pinService.pinJSON(req.body);
+    const cid = await pinJSON(req.body);
     res.json({ cid });
   } catch (e) {
     res.status(500).json({ error: e.message });

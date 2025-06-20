@@ -1,4 +1,4 @@
-import { client } from "../config/pinataClient.js";
+import { client } from "../services/pinata_client.js";
 
 export function pinJSON(data) {
   return client.pinJSONToIPFS(data).then((r) => r.IpfsHash);
