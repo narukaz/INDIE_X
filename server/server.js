@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
-dotenv.config();
 import app from "./app.js";
-app.use(express.json());
-const port = 3000;
-app.listen(port, () => console.log(`Listening on ${port}`));
+
+dotenv.config();
+const port = process.env.PORT;
+app.listen(port, () => console.log(`Server running on port ${port}`));
