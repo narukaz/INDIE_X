@@ -9,7 +9,7 @@ import NFT_explorer from "./components/Rent_and_lend/NFT_explorer.jsx";
 import Game_screen from "./components/game_screen/Game_screen.jsx";
 import Game_NFT_Collect_Explorer from "./components/collect_games_nft/Game_NFT_Collect_Explorer.jsx";
 import NFT_SKIN_ORIGIN_SCREEN from "./components/NFT_Skin_screen/NFT_SKIN_ORIGIN_SCREEN.jsx";
-import Creator_page from "./components/Creator/Creator_page.jsx";
+import Creator_page from "./components/Creator/Creator_page";
 
 // home
 //collect games -> popular card banner , below that an explorer, when click it will open a game page -> game page will have a explorer only for game related nft's
