@@ -1,4 +1,4 @@
-import * as pinService from "../services/pinService.js";
+import * as pinService from "../config/pinService.js";
 
 export async function publishMetadata(req, res) {
   try {
