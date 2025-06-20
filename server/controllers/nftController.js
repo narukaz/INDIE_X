@@ -4,6 +4,7 @@ import * as pinService from "../config/pinService.js";
 export async function mint(req, res) {
   try {
     // 1. Pin asset
+    console.log("mint kicked");
     const { buffer, originalname } = req.file;
     const assetCid = await pinService.uploadAsset(buffer, originalname);
     console.log("req.file =", req.file);
