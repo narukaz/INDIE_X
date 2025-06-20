@@ -2,6 +2,7 @@ import * as pinService from "../config/pinService.js";
 
 export async function publishMetadata(req, res) {
   try {
+    console.log("reqest body -> ", req.body);
     const { name, description, attributes, imageCid } = req.body;
     const metadata = {
       name,
