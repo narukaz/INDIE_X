@@ -6,6 +6,8 @@ export async function mint(req, res) {
     // 1. Pin asset
     const { buffer, originalname } = req.file;
     const assetCid = await pinService.uploadAsset(buffer, originalname);
+    console.log("req.file =", req.file);
+    console.log("req.body =", req.body);
 
     // 2. Build metadata
     const metadata = {
