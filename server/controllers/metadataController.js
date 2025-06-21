@@ -7,7 +7,7 @@ export async function publishMetadata(req, res) {
     const metadata = {
       name,
       description,
-      image: `ipfs://${imageCid}`,
+      image: `cyan-realistic-swift-995.mypinata.cloud/ipfs/${imageCid}`,
       attributes,
     };
     const metaCid = await pinService.pinJson(metadata);
