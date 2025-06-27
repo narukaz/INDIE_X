@@ -10,6 +10,7 @@ import Game_screen from "./components/game_screen/Game_screen.jsx";
 import Game_NFT_Collect_Explorer from "./components/collect_games_nft/Game_NFT_Collect_Explorer.jsx";
 import NFT_SKIN_ORIGIN_SCREEN from "./components/NFT_Skin_screen/NFT_SKIN_ORIGIN_SCREEN.jsx";
 import Creator_page from "./components/Creator/Creator_page";
+import GameDashboard from "./components/Creator/Creator_page";
 
 // home
 //collect games -> popular card banner , below that an explorer, when click it will open a game page -> game page will have a explorer only for game related nft's
@@ -17,7 +18,7 @@ import Creator_page from "./components/Creator/Creator_page";
 
 function App() {
   return (
-    <div className="w-full h-full flex flex-col gap-5">
+    <div className="w-full h-full flex flex-col gap-5 bg-black">
       <Navigation />
       <Routes>
         <Route index element={<Home_Screen />} />
@@ -36,7 +37,10 @@ function App() {
         />
 
         <Route path="/collect-game-nft" element={<Collect_games_nft />} />
-        <Route path="/collect-game-nft/game" element={<Game_screen />} />
+        <Route
+          path="/collect-game-nft/game/:contractAddress"
+          element={<Game_screen />}
+        />
         <Route path="/collect-skin-nft" element={<COLLECT_SKIN_NFT />} />
         <Route
           path="/collect-skin-nft/nft"
@@ -44,9 +48,13 @@ function App() {
         />
 
         <Route path="/trade-nft" element={<NFT_explorer />} />
-        <Route path="/trade-nft/details" element={<Rent_and_Lend />} />
+        {/* <Route path="/trade-nft/details" element={<Rent_and_Lend />} /> */}
+        <Route
+          path="/trade-nft/details/:contractAddress/:tokenId"
+          element={<Rent_and_Lend />}
+        />
 
-        <Route path="/creator" element={<Creator_page />} />
+        <Route path="/creator" element={<GameDashboard />} />
       </Routes>
       <Footer />
     </div>

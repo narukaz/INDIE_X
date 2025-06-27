@@ -2,3 +2,24 @@
 html {
   background: #0e1420;
 }
+
+.hover-expand {
+  width: 80px;
+  transition: width 0.7s ease-in-out;
+}
+
+.hover-container:hover .hover-expand {
+  width: 160px;
+  transition: width 0s; /* instant on hover */
+}
+
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+.no-spinner {
+  -moz-appearance: textfield;
+}

@@ -1,58 +1,54 @@
-import React, { useState } from "react";
+import React from "react";
 import NFT_notification_table_row from "./NFT_notification_table_row";
-import Lend_request_popup from "./Lend_request_popup";
-import NFT_LENDOUT_approval from "./NFT_LENDOUT_approval";
-let NFT_DATA_RAW = {
-  "order type": "",
-  "Ask Price": 0,
-  user: "",
-};
 
-function NFT_Notification_action_table() {
-  const [nft_action_data, set_nft_action_data] = useState(NFT_DATA_RAW);
-  const [show_lend_approval, set_show_lend_approval] = useState(false);
-  const [show_rent_approval, set_show_rent_approval] = useState(false);
-
+// This component now accepts isNftRented to disable actions when needed
+function NFT_Notification_action_table({
+  rentalRequests,
+  nftTokenId,
+  nftContractAddress,
+  nftOwner,
+  isNftRented, // <-- NEW PROP
+}) {
   return (
-    <>
-      {show_lend_approval && (
-        <NFT_LENDOUT_approval
-          nft_action_data={nft_action_data}
-          set_show_lend_approval={set_show_lend_approval}
-        />
-      )}
-      <div className="flex flex-col border border-gray-600 mx-20 pb-4 h-[700px] rounded-2xl">
-        <div className="grid grid-cols-6 gap-5 text-white  border-b border-b-gray-500 py-4  w-full items-center">
-          <p className="border-r border-r-gray-600 px-4">NFT</p>
-
-          <p className="border-r border-r-gray-600 px-4">Order type</p>
-          <p className="border-r border-r-gray-600 px-4">Duration</p>
-          <p className="border-r border-r-gray-600 px-4">Ask price</p>
-          <p className="border-r border-r-gray-600 px-4">User</p>
-          <p>Action</p>
-        </div>
-        <NFT_notification_table_row
-          set_nft_action_data={set_nft_action_data}
-          set_show_lend_approval={set_show_lend_approval}
-          set_show_rent_approval={set_show_rent_approval}
-        />
-        <NFT_notification_table_row
-          set_nft_action_data={set_nft_action_data}
-          set_show_lend_approval={set_show_lend_approval}
-          set_show_rent_approval={set_show_rent_approval}
-        />
-        <NFT_notification_table_row
-          set_nft_action_data={set_nft_action_data}
-          set_show_lend_approval={set_show_lend_approval}
-          set_show_rent_approval={set_show_rent_approval}
-        />
-        <NFT_notification_table_row
-          set_nft_action_data={set_nft_action_data}
-          set_show_lend_approval={set_show_lend_approval}
-          set_show_rent_approval={set_show_rent_approval}
-        />
+    <div className="flex flex-col border border-gray-600 mx-4 md:mx-20 pb-4 rounded-2xl bg-slate-900/50 overflow-hidden">
+      <div className="grid grid-cols-5 gap-5 text-white border-b border-b-gray-500 py-4 w-full items-center sticky top-0 bg-[#171c25] px-4">
+        <p className="border-r border-r-gray-600 pr-4 font-semibold">
+          Requester
+        </p>
+        <p className="border-r border-r-gray-600 px-4 font-semibold">
+          Offer Price
+        </p>
+        <p className="border-r border-r-gray-600 px-4 font-semibold">
+          Duration
+        </p>
+        <p className="border-r border-r-gray-600 px-4 font-semibold">
+          Expires In
+        </p>
+        <p className="px-4 font-semibold text-center">Action</p>
       </div>
-    </>
+
+      <div className="overflow-y-auto h-[600px]">
+        {rentalRequests && rentalRequests.length > 0 ? (
+          rentalRequests.map((request, index) => (
+            <NFT_notification_table_row
+              key={index}
+              requestData={request}
+              requestIndex={index}
+              tokenId={nftTokenId}
+              contractAddress={nftContractAddress}
+              nftOwner={nftOwner}
+              isNftRented={isNftRented} // <-- PASS PROP DOWN
+            />
+          ))
+        ) : (
+          <div className="flex items-center justify-center h-full">
+            <p className="text-gray-400 text-lg">
+              No pending rental requests for this NFT.
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
 
