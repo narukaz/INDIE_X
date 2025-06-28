@@ -72,20 +72,6 @@
 
 ---
 
-## 📸 Embedding Images in Markdown
-
-You can display your uploaded images directly in this README by referencing the Pinata CID or local path:
-
-```markdown
-![Alt text](https://gateway.pinata.cloud/ipfs/<YourImageCID>)
-```
-
-_or for a local file in the repo:_
-
-```markdown
-![Character Skin](assets/skins/skin1.png)
-```
-
 ---
 
 ## 🛠️ Tech Stack & Integrations
