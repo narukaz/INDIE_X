@@ -97,8 +97,8 @@
 ## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/narukaz/sui_amm_pool.git
-cd sui_amm_pool
+git clone https://github.com/narukaz/INDIE_X/client.git
+cd  client
 npm install
 npm run dev
 ```
