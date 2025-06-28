@@ -24,7 +24,7 @@
 
 ## 🕹️ Platform Workflow
 
-1. **Deploy Game** via `GameFactory.sol`
+1. **Deploy Game** via `Game_instance.sol`
 2. **Mint NFTs** (skins, lootbox tickets)
 3. **Buy Games & NFTs** (true on‑chain ownership)
 4. **Rent NFTs** → passive earnings
